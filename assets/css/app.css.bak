@@ -1,0 +1,58 @@
+/* Write your styles */
+.app-image-sm{
+	width:120px;
+	height:180px;
+	overflow:hidden;
+}
+
+.app-image-xs{
+	width:100px;
+	height:150px;
+	overflow:hidden;
+}
+
+.app-image-lg{
+	width:160px;
+	height:240px;
+	overflow:hidden;
+}
+
+.app-title-sm{
+	width:120px;
+}
+
+.app-group-header{
+	min-width:200px;
+	min-height:200px;
+	max-width:250px;
+	max-height:250px;
+	overflow:hidden;
+}
+
+.app-list-none{
+	list-style-type:none;
+}
+
+.app-badge-pink{
+	background-color:#ff7676;
+}
+
+.app-btn-pink{
+	background-color:#ff7676;
+}
+
+.app-width{
+	width:150px
+}
+
+.header {
+	text-align: center;
+}
+.header h1 {
+	font-size: 200%;
+	color: #333;
+	margin-top: 30px;
+}
+.header p {
+	font-size: 14px;
+}
