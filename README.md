@@ -1,9 +1,9 @@
 # platform-for-group-s-activity
 
-<a>
+<a href="#--%E7%AE%80%E4%BB%8B">
 中文版
 </a>
-<a>
+<a href="#brief-introduction">
 English
 </a>
 <h2>
