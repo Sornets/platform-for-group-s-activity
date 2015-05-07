@@ -1,0 +1,264 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>创建新活动</title>
+  <meta name="author" content="Sornets">
+  <meta name="content" content="创建新活动">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<header class="am-topbar am-topbar-inverse">
+	<div class="am-g am-g-fixed">
+	  <h1 class="am-topbar-brand">
+		<a href="#">大炮台</a>
+	  </h1>
+
+	  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+	  <div class="am-collapse am-topbar-collapse " id="doc-topbar-collapse">
+		<div class="am-topbar-right">
+			<ul class="am-nav am-nav-pills am-topbar-nav">
+			  <li class="am-active"><a href="#">首页</a></li>
+			  <li><a href="#">排行榜</a></li>
+			  <li><a href="#">个人主页</a></li>
+			  <li><a href="#">活动日历</a></li>
+			</ul>
+
+			<form class="am-topbar-form am-topbar-left am-form-inline" role="search">
+			  <div class="am-form-group">
+				<input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+			  </div>
+			</form>
+
+			<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+			<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</button>
+		</div>
+	  </div>
+	</div><!--am-g-fixed-->
+</header>
+
+<div class="am-g am-g-fixed"><!--页面内容-->
+	<div class="am-u-sm-12 am-u-md-8"><!--内容列表-->
+		<div class="am-container">
+			<form action="" method="post" class="am-form">
+				<fieldset>
+				<legend>填写活动信息</legend>
+
+				<div class="am-form-group">
+					<label class="am-text-sm">选择活动地点</label>
+					<select class="am-input-sm">
+						<option value="FXGC">繁星广场</option>
+						<option value="YLKGC">尤洛卡广场</option>
+						<option value="DH">大学生活动中心</option>
+						<option value="TSGC">泰山广场</option>
+						<option value="BJS">笔架山</option>
+						<option value="other">其他</option>
+					</select>
+					<input class="am-input-sm" type="text" name="addressPlus" placeholder="详细地点" />
+				</div>
+
+				<div class="am-form-group">
+					<label class="am-text-sm">活动名称</label>
+					<input class="am-input-sm" type="text" placeholder="填写要举办的活动的名称">
+				</div>
+
+				<div class="am-form-group">
+					<label class="am-text-sm">活动日期</label>
+					<br />
+					<span>From</span>
+					<input type="text" class="am-inline am-input-sm" placeholder="开始日期" data-am-datepicker readonly style="width:150px"/>
+					<span>To</span>
+					<input type="text" class="am-inline am-input-sm" placeholder="结束日期" data-am-datepicker readonly style="width:150px"/>
+				</div>
+
+				<div class="am-form-group">
+					<label class="am-text-sm">活动时间</label>
+					<br />
+					<span>From</span>
+					<select class="am-inline am-input-sm" style="width:150px">
+						<option value="08:00">08:00</option>
+						<option value="08:30">08:30</option>
+						<option value="09:00">09:00</option>
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="13:00">13:00</option>
+						<option value="13:30">13:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>
+						<option value="18:00">18:00</option>
+						<option value="18:30">18:30</option>
+						<option value="19:00">19:00</option>
+						<option value="19:30">19:30</option>
+						<option value="20:00">20:00</option>
+						<option value="20:30">20:30</option>
+						<option value="21:00">21:00</option>
+						<option value="21:30">21:30</option>
+						<option value="22:00">22:00</option>
+						<option value="22:30">22:30</option>
+						<option value="23:00">23:00</option>
+						<option value="23:30">23:30</option>
+						<option value="00:00">00:00</option>
+						<option value="00:30">00:30</option>
+						<option value="01:00">01:00</option>
+						<option value="01:30">01:30</option>
+						<option value="02:00">02:00</option>
+						<option value="02:30">02:30</option>
+						<option value="03:00">03:00</option>
+						<option value="03:30">03:30</option>
+						<option value="04:00">04:00</option>
+						<option value="04:30">04:30</option>
+						<option value="05:00">05:00</option>
+						<option value="05:30">05:30</option>
+						<option value="06:00">06:00</option>
+						<option value="06:30">06:30</option>
+						<option value="07:00">07:00</option>
+						<option value="07:30">07:30</option>
+					</select>
+					<span>To</span>
+					<select class="am-inline am-input-sm" style="width:150px">
+						<option value="08:00">08:00</option>
+						<option value="08:30">08:30</option>
+						<option value="09:00">09:00</option>
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="13:00">13:00</option>
+						<option value="13:30">13:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>
+						<option value="18:00">18:00</option>
+						<option value="18:30">18:30</option>
+						<option value="19:00">19:00</option>
+						<option value="19:30">19:30</option>
+						<option value="20:00">20:00</option>
+						<option value="20:30">20:30</option>
+						<option value="21:00">21:00</option>
+						<option value="21:30">21:30</option>
+						<option value="22:00">22:00</option>
+						<option value="22:30">22:30</option>
+						<option value="23:00">23:00</option>
+						<option value="23:30">23:30</option>
+						<option value="00:00">00:00</option>
+						<option value="00:30">00:30</option>
+						<option value="01:00">01:00</option>
+						<option value="01:30">01:30</option>
+						<option value="02:00">02:00</option>
+						<option value="02:30">02:30</option>
+						<option value="03:00">03:00</option>
+						<option value="03:30">03:30</option>
+						<option value="04:00">04:00</option>
+						<option value="04:30">04:30</option>
+						<option value="05:00">05:00</option>
+						<option value="05:30">05:30</option>
+						<option value="06:00">06:00</option>
+						<option value="06:30">06:30</option>
+						<option value="07:00">07:00</option>
+						<option value="07:30">07:30</option>
+					</select>
+				</div>
+
+				<div class="am-form-group am-form-file">
+					<label class="am-text-sm">上传活动海报</label>
+					<div>
+						<button type="button" class="am-btn am-btn-default am-btn-sm">
+							<i class="am-icon-cloud-upload"></i> 选择要上传的文件
+						</button>
+					</div>
+					<input type="file" id="doc-ipt-file-2">
+				</div>
+
+				<div class="am-form-group">
+					<label class="am-text-sm">活动费用</label>
+					<input class="am-input-sm" type="text" placeholder="输入参加活动所需交纳的费用" name="pay"/>
+				</div>
+
+				<div class="am-form-group">
+					<label class="am-text-sm">活动详情</label>
+					<div style="width:600px;height:500px;background-color:green">富文本编辑框</div>
+				</div>
+				
+				<p class="am-text-center">
+				<button type="submit" class="am-btn am-btn-primary">提交</button>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<button type="reset" class="am-btn am-btn-primary">重置</button></p>
+				
+				</fieldset>
+			</form>
+		</div>
+	
+	</div>
+
+	<div class="am-u-sm-12 am-u-md-4 am-show-md-up"><!--日历与评论-->
+		<div class="am-container am-margin-top-lg">
+			<h2>《规章》</h2>
+		</div>
+	</div>
+</div>
+
+<footer class="am-g am-g-fixed">
+
+</footer>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<![endif]-->
+</body>
+</html>
