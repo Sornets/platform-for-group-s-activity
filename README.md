@@ -1,4 +1,11 @@
 # platform-for-group-s-activity
+
+<a>
+中文版
+</a>
+<a>
+English
+</a>
 <h2>
   简介：
 </h2>
@@ -13,4 +20,22 @@
 </h2>
 <p>
   现在正在编写模板所需的网页静态页。
+</p>
+
+<h2>
+Brief introduction
+</h2>
+<p>
+  This is a website service for college communities and students.
+  As a community user, you can publish your upcoming activity with illustrations and introduction.
+  As a student user, you can browse acticities which are currently holding or upcoming or very expected. And you can look up 
+peoples comments and communities' charts.
+</p>
+
+<h2>
+Schedule
+</h2>
+
+<p>
+  I'm writing static webpage for backstage template.
 </p>
