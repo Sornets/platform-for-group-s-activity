@@ -5,7 +5,7 @@ class ForgetAction extends Action {
 		
 	}
 
-	public function checkForget(){//根据表单判断是否提供密码
+	public checkForget(){//根据表单判断是否提供密码
 	
 	}
 }

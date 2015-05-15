@@ -22,8 +22,4 @@ class CommentAction extends Action {
 		$uid = session("userid");
 
 	}
-
-	public function creatComment($aid){//创建新评论
-		$uid = session("userid");
-	}
 }

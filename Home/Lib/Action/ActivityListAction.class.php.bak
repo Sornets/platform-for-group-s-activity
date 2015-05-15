@@ -6,11 +6,7 @@ class ActivityListAction extends Action {
 	
 	}
 
-	public function hotActs(){//热门活动列表
-	
-	}
-
-	public function newActs(){//最新活动列表
+	public function hotList(){//热门活动列表
 	
 	}
 }
