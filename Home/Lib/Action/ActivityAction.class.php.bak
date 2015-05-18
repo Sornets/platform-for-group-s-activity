@@ -9,4 +9,8 @@ class ActivityAction extends Action {
 	public function iInterest(){
 		$uid = session("userid");
 	}
+
+	public function iJoin(){
+		$uid = session("userid");
+	}
 }
