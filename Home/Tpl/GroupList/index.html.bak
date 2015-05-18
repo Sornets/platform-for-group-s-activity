@@ -1,0 +1,92 @@
+<include file="Public:topBar" />
+
+<div class="am-g am-g-fixed"><!--页面内容-->
+	<div class="am-u-sm-12 am-u-md-8"><!--内容列表-->
+		<div class="am-container am-margin-top">
+			<div class="am-container">
+				<h2>{$pageTitle}</h2>
+				<div class="am-text-sm">
+					<label>时间：</label>
+					<ul class="am-inline am-padding-left-xs">
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time=0&order={$order}" class="am-badge am-badge-primary">全部</a></li>&nbsp&nbsp&nbsp
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time=1&order={$order}" class="am-badge am-badge-secondary">本学期</a></li>&nbsp&nbsp&nbsp
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time=2&order={$order}" class="am-badge am-badge-success">本月</a></li>&nbsp&nbsp&nbsp
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time=3&order={$order}" class="am-badge am-badge-warning">最近一周</a></li>&nbsp&nbsp&nbsp
+					</ul>
+					<br />
+					<label>排序：</label>
+					<ul class="am-inline am-padding-left-xs">
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time={$time}&order=0" class="am-badge am-badge-primary">综合排名</a></li>&nbsp&nbsp&nbsp
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time={$time}&order=1" class="am-badge am-badge-secondary">按活动数</a></li>&nbsp&nbsp&nbsp
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time={$time}&order=2" class="am-badge am-badge-success">按评论数</a></li>&nbsp&nbsp&nbsp
+						<li class="am-inline"><a href="index.php?m=GroupList&a=index&time={$time}&order=3" class="am-badge am-badge-warning">按点赞数</a></li>&nbsp&nbsp&nbsp
+					</ul>
+				</div>
+			</div>
+
+			<hr /><!--data start-->
+			
+			<foreach name="groups" item="group">
+				<div class="am-container am-padding-vertical"><!--a group start-->
+					<img class="am-fl am-margin-horizontal app-image-sm" src="/images/userHeaders/{$group.header}" >
+					<a href="index.php?m=Group&a=index&id={$group.id}"><p class="am-text-truncate am-margin-top-0"><span class="am-badge am-badge-success"></span>{$group.nickname}</p></a>
+					<p class="am-margin-vertical-xs am-text-sm">办公室地址：{$group.address}</p>
+					<p class="am-margin-vertical-xs am-text-sm">公邮：{$group.offical_email}</p>
+					<p class="am-margin-vertical-xs am-text-sm">收到赞：{$group.agree_num}次</p>
+					<p class="am-margin-vertical-xs am-text-sm">被评论：{$group.comment_num}次</p>
+					<p class="am-margin-vertical-xs "><a href="javascript:void(0)" class="am-badge am-badge-secondary am-text-sm">收藏</a></p>
+				</div><!--a group end-->
+			</foreach>
+			
+			<hr /><!--data end-->
+			
+			<div><!--Pagination-->
+				<ul class="am-pagination am-pagination-centered">
+					{$page}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="am-u-sm-12 am-u-md-4 am-show-md-up"><!--日历与评论-->
+		<include file="Public:calendarDiv" />
+		<br />
+		<include file="Public:rankDiv" />
+
+		<div class="am-container"><!--comment list start-->
+			<h2 class="am-text-default">最新评论：</h2>
+
+			<foreach name="newComments" item="comment">
+				<article class="am-comment"><!--a comment start-->
+					<a href="#link-to-user-home">
+						<img src="/images/userHeader/{$comment.header}" alt="{$comment.nickname}" class="am-comment-avatar" width="48" height="48"/>
+					</a>
+
+					<div class="am-comment-main">
+						<header class="am-comment-hd">
+							<div class="am-comment-meta">
+								<a href="#link-to-user" class="am-comment-author">{$comment.nickname}</a>
+								评论于 <time datetime="{$comment.datatime}">{$comment.datatime}</time>
+							</div>
+						</header>
+
+						<div class="am-comment-bd">
+							<p class="am-text-sm">{$comment.content}</p>
+						</div>
+
+						<footer class="am-comment-footer">
+							<div class="am-comment-actions">
+								<a href="javascript:void(0)"><i class="am-icon-thumbs-up"></i></a> 
+								<a href=""><i class="am-icon-thumbs-down"></i></a> 
+								<a href=""><i class="am-icon-reply"></i></a>
+							</div>
+						</footer>
+					</div>
+				</article><!--a comment end-->
+			</foreach>
+			
+		</div><!--comment list end-->
+	</div><!--日历与评论end-->
+</div>
+
+<include file="footer" />
