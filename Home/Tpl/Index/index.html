@@ -1,0 +1,114 @@
+<include file="Public:topBar" />
+<div class="am-g am-g-fixed"><!--页面内容-->
+	<div class="am-u-sm-12 am-u-md-8"><!--内容列表-->
+		<!--今日活动-->
+		<div class="am-container am-margin-top"><!--will 12-->
+			<div class="am-container"><!--title-->
+				<h2 class="am-inline">今天的活动：</h2>
+				<a class="am-margin-top-xs am-fr am-badge am-badge-secondary" href="">more</a>
+			</div>
+			<hr />
+			<foreach name="todayActs" item="act">
+				<div class="am-container am-padding-vertical"><!--container-->
+					<img class="am-fl am-margin-horizontal app-image-sm" src="/images/actheaders/{$act.image}" >
+					<a href="index.php?m=Activity&a=index&id={$act.id}"><p class="am-text-truncate am-margin-top-0"><span class="am-badge am-badge-success">{$act.state}</span>{$act.title}</p></a>
+					<p class="am-margin-vertical-xs am-text-sm">时间：{$act.start_data} ~ {$act.end_data} 每天{$act.start_time}-{$act.end_time}</p>
+					<p class="am-margin-vertical-xs am-text-sm">地点：{$act.pname} {$act.plact_detail}</p>
+					<p class="am-margin-vertical-xs am-text-sm">费用：<span class="am-badge am-badge-success">{$act.money}</span></p>
+					<p class="am-margin-vertical-xs am-text-sm">发起：<a href="index.php?m=Group&a=index&id={$act.id}">{$act.nickname}</a></p>
+					<p class="am-margin-vertical-xs am-text-sm"><a class="am-badge am-badge-secondary">{$act.agree_num}人感兴趣</a> <a class="am-badge am-badge-secondary">{$act.comment_num}条评论</a></p>
+				</div>
+			</foreach>
+		</div><!--will 12-->
+		<hr />
+		<!--热门活动-->
+		<div class="am-container"><!--hot 12-->
+			<div class="am-container"><!--title-->
+				<h2 class="am-inline">热门活动：</h2>
+				<a class="am-margin-top-xs am-fr am-badge am-badge-secondary" href="">more</a>
+			</div>
+			<hr />
+			<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4">
+				
+				<li>
+					<img class="am-margin-horizontal am-margin-bottom-xs app-image-sm am-thumbnail" src="/images/actheaders/{$hotActs[0].image}" >
+					<a href="index.php?m=Activity&a=index&id={$hotActs[0].id}"><p class="am-margin-horizontal app-title-sm">{$hotActs[0].title}<span class="am-badge am-badge-success">{$hotActs[0].state}</span></p></a>
+				</li>
+				<li>
+					<img class="am-margin-horizontal am-margin-bottom-xs app-image-sm am-thumbnail" src="/images/actheaders/{$hotActs[1].image}" >
+					<a href="index.php?m=Activity&a=index&id={$hotActs[1].id}"><p class="am-margin-horizontal app-title-sm">{$hotActs[1].title}<span class="am-badge am-badge-success">{$hotActs[1].state}</span></p></a>
+				</li>
+				<li class="am-show-md-up">
+					<img class="am-margin-horizontal am-margin-bottom-xs app-image-sm am-thumbnail" src="/images/actheaders/{$hotActs[2].image}" >
+					<a href="index.php?m=Activity&a=index&id={$hotActs[2].id}"><p class="am-margin-horizontal app-title-sm">{$hotActs[2].title}<span class="am-badge am-badge-success">{$hotActs[2].state}</span></p></a>
+				</li>
+				<li class="am-show-lg-up">
+					<img class="am-margin-horizontal am-margin-bottom-xs app-image-sm am-thumbnail" src="/images/actheaders/{$hotActs[3].image}" >
+					<a href="index.php?m=Activity&a=index&id={$hotActs[3].id}"><p class="am-margin-horizontal app-title-sm">{$hotActs[3].title}<span class="am-badge am-badge-success">{$hotActs[3].state}</span></p></a>
+				</li>
+			</ul>
+		</div><!--hot 12-->
+		<hr />
+		<!--最新发布-->
+		<div class="am-container"><!--new 12-->
+			<div class="am-container"><!--title-->
+				<h2 class="am-inline">刚刚发布的活动：</h2>
+				<a class="am-margin-top-xs am-fr am-badge am-badge-secondary" href="">more</a>
+			</div>
+			<hr />
+			<foreach name="newActs" item="act">
+				<div class="am-container am-padding-vertical"><!--container-->
+					<img class="am-fl am-margin-horizontal app-image-sm" src="/images/actHeaders/{$act.image}" >
+					<a href="index.php?m=Activity&a=index&id={$act.id}"><p class="am-text-truncate am-margin-top-0"><span class="am-badge am-badge-success">{$act.state}</span>{$act.title}</p></a>
+					<p class="am-margin-vertical-xs am-text-sm">时间：{$act.start_data} ~ {$act.end_data} 每天{$act.start_time}-{$act.end_time}</p>
+					<p class="am-margin-vertical-xs am-text-sm">地点：{$act.pname} {$act.plact_detail}</p>
+					<p class="am-margin-vertical-xs am-text-sm">费用：<span class="am-badge am-badge-success">{$act.money}</span></p>
+					<p class="am-margin-vertical-xs am-text-sm">发起：<a href="index.php?m=Group&a=index&id={$act.id}">{$act.nickname}</a></p>
+					<p class="am-margin-vertical-xs am-text-sm"><a class="am-badge am-badge-secondary">{$act.agree_num}人感兴趣</a> <a class="am-badge am-badge-secondary">{$act.comment_num}条评论</a></p>
+				</div>
+			</foreach>
+		</div><!--new 12-->
+	</div><!--页面内容-->
+
+	<div class="am-u-sm-12 am-u-md-4 am-show-md-up"><!--日历与评论-->
+		<include file="Public:calendarDiv" />
+
+		<br />
+
+		<include file="Public:rankDiv" />
+
+		<div class="am-container"><!--comment list start-->
+			<h2 class="am-text-default">最新评论：</h2>
+			<foreach name="newComments" item="comment">
+				<article class="am-comment"><!--a comment start-->
+					<a href="#link-to-user-home">
+						<img src="/images/userHeaders/{$comment.header}" alt="{$comment.nickname}" class="am-comment-avatar" width="48" height="48"/>
+					</a>
+
+					<div class="am-comment-main">
+						<header class="am-comment-hd">
+							<div class="am-comment-meta">
+								<a href="#link-to-user" class="am-comment-author">{$comment.nickname}</a>
+								评论于 <time datetime="{$comment.datatime}">{$comment.creat_time}</time>
+							</div>
+						</header>
+
+						<div class="am-comment-bd">
+							<p class="am-text-sm">{$comment.content}</p>
+						</div>
+
+						<footer class="am-comment-footer">
+							<div class="am-comment-actions">
+								<a href=""><i class="am-icon-thumbs-up"></i>{$comment.agree_num}</a> 
+								<a href=""><i class="am-icon-thumbs-down"></i>{$comment.disagree_num}</a> 
+								<a href=""><i class="am-icon-reply"></i></a>
+							</div>
+						</footer>
+					</div>
+				</article><!--a comment end-->
+			</foreach>
+		</div><!--comment list end-->
+	</div><!--日历与评论end-->
+</div>
+
+<include file="Public:footer" />
