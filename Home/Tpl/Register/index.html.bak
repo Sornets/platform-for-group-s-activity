@@ -11,7 +11,7 @@
 
 	<div class="am-g">
 		<div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
-			<form action="index.php?m=Register&a=index" method="post" class="am-form">
+			<form action="index.php?m=Register&a=creatUser" method="post" class="am-form">
 				<fieldset>
 					<legend>注册新用户</legend>
 					<label for="email">邮箱</label>
