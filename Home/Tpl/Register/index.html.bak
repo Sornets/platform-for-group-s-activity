@@ -1,0 +1,80 @@
+<include file="Public:header" />
+
+<body>
+	<div class="header">
+		<div class="am-g">
+			<h1>用户注册</h1>
+			<!--<p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>-->
+		</div>
+		<hr />
+	</div>
+
+	<div class="am-g">
+		<div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+			<form action="index.php?m=Register&a=index" method="post" class="am-form">
+				<fieldset>
+					<legend>注册新用户</legend>
+					<label for="email">邮箱</label>
+						<input type="email" name="email" id="email" />
+					<br>
+
+					<label for="nickname">昵称</label>
+						<input type="text" name="nickname" id="nickname" />
+					<br>
+
+					<label>性别</label>
+
+					<br />
+
+					<label>
+						<input type="radio" name="sex" value="boy" checked />
+						男生
+					</label>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<label>
+						<input type="radio" name="sex" value="girl" />
+						女生
+					</label>
+					
+					<br />
+
+					<label for="password">密码</label>
+						<input type="password" name="password" id="password" />
+					<br>
+					<label for="password2">确认密码</label>
+						<input type="password" name="password2" id="password2" />
+					<br />
+
+					<label for="institute">学院</label>
+						<select class="am-inline am-input-sm" name="institute_code" style="width:150px">
+							<option value="xinxi">信息科学与工程学院</option>
+							<option value="jingguan">经管学院</option>
+						</select>
+					<br />
+
+					<label for="major">专业</label>
+						<input type="text" name="major" id="major" />
+					<br />
+
+					<label for="enrol_year">入学年</label>
+						<input type="text" name="enrol_year" id="enrol_year" />
+					<br />
+
+					<label for="truename">真实姓名</label>
+						<input type="text" name="truename" id="truename" />
+					<br />
+
+					<label for="s_num">学号</label>
+						<input type="text" name="s_num" id="s_num" />
+					<br />
+
+					<p class="">
+						<input type="submit" name="" value="注 册" class="am-btn am-btn-primary am-btn-sm ">
+						<input type="reset" name="" value="重 置" class="am-btn am-btn-primary am-btn-sm ">
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+<include file="Public:footOnly" />
