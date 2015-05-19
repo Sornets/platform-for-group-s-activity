@@ -1,6 +1,0 @@
-<div class="am-container">
-	<p class="am-text-left"><b>本学期获得赞最多的团体</b></p>
-	<p class="am-text-center"><a href="">{$best.group_name}</a></p>
-	<p class="am-text-left"><b>本学期获得赞最多的活动</b></p>
-	<p class="am-text-center"><a href="">{$best.act_name}</a></p>
-</div>

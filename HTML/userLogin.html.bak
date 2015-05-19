@@ -51,7 +51,7 @@
 			<form action="" method="post" class="am-form">
 				<fieldset>
 					<legend>登录</legend>
-					<!--<label>
+					<label>
 						<input type="radio" name="userType" value="group"/>
 						社团用户登录
 					</label>
@@ -59,7 +59,7 @@
 					<label>
 						<input type="radio" name="userType" value="studernt" />
 						学生用户登录
-					</label>-->
+					</label>
 					
 					<br />
 

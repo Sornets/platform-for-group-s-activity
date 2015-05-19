@@ -1,0 +1,40 @@
+<include file="Public:header" />
+<body>
+	<div class="header">
+		<div class="am-g">
+			<h1>用户登录</h1>
+			<!--<p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>-->
+		</div>
+		<hr />
+	</div>
+
+	<div class="am-g">
+		<div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+			<form action="index.php?m=Login&a=checkLogin" method="post" class="am-form">
+				<fieldset>
+					<legend>登录</legend>
+
+					<br />
+
+					<label for="email">邮箱:</label>
+						<input type="email" name="email" id="email" value="">
+					<br>
+					<label for="password">密码:</label>
+						<input type="password" name="password" id="password" value="">
+					<br>
+					<label for="remember-me">
+						<input id="remember-me" type="checkbox">
+						记住密码
+					</label>
+					<br />
+					<p class="">
+						<input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm ">
+						<a href="index.php?m=Register&a=index" value="注 册" class="am-btn am-btn-primary am-btn-sm ">
+						<a href="index.php?m=Forget&a=index" value="忘记密码" class="am-btn am-btn-sm am-fr">
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+<include file="footOnly" />
