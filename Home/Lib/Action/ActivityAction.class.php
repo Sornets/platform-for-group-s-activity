@@ -75,8 +75,8 @@ class ActivityAction extends Action {
 				$user = $user_model->find($comment['uid']);
 				$comment['header'] = $user['header'];
 				$comment['nickname'] = $user['nickname'];
-				$comment['agree_num'] = count($com_agree_model-where("cid=$comment['id']")->select());
-				$comment['disagree_num'] = count($com_disagree_model-where("cid=$comment['id']")->select());
+				$comment['agree_num'] = count($com_agree_model->where("cid=" . $comment['id'])->select());
+				$comment['disagree_num'] = count($com_disagree_model->where("cid=" . $comment['id'])->select());
 			}
 			$this->assign('page',$show);// 赋值分页输出
 			$this->assign('newComments', $newComments);

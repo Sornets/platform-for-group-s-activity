@@ -29,5 +29,5 @@ function act_state($start_time, $current_time, $end_time){
  * 在评论的二维数组中找出热门评论
  */
 function hot_comments($comments){
-	
+	return array();
 }
