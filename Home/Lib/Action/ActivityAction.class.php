@@ -65,7 +65,7 @@ class ActivityAction extends Action {
 			//$newComments
 			//数据分页
 			import('ORG.Util.Page');// 导入分页类
-			$count      = $act['comment_num']
+			$count      = $act['comment_num'];
 			$Page       = new Page($count,25);// 实例化分页类 传入总记录数和每页显示的记录数
 			$show       = $Page->show();// 分页显示输出
 			
@@ -100,7 +100,7 @@ class ActivityAction extends Action {
 			$this->assign('theirActs', $theirActs);
 
 			//$best
-
+			//计算太复杂，需要用ajax做
 
 			$this->display();
 		}
