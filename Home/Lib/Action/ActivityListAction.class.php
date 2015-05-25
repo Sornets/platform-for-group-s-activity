@@ -17,9 +17,13 @@ class ActivityListAction extends Action {
 		$pageTitle = "活动列表";
 		$this->assign('pageTitle', $pageTitle);
 
+		//$id
+		if($id){
+			$this->assign('id', $id);
+		}
 		//$time int 时间工具按钮变量
 		//$state int 状态工具按钮变量
-		if($time >= 1 && $time <= 3){
+		/*if($time >= 1 && $time <= 3){
 			$this->assign('time', $time);
 		}
 		else{
@@ -30,7 +34,7 @@ class ActivityListAction extends Action {
 		}
 		else{
 			$this->assign('state', 0);
-		}
+		}*/
 		//$siteName
 		$config = $config_model->find(1);
 		$site_name = $config['site_name'];
@@ -49,9 +53,24 @@ class ActivityListAction extends Action {
 		$this->assign('newComments', $newComments);
 
 		//$act array
-			//$state
-		if($state == 1){
-			
+		import('ORG.Util.Page');// 导入分页类
+		if($id){
+			$count      = $act_model->where("uid=$id")->count();// 查询满足要求的总记录数
+			$Page       = new Page($count,15);// 实例化分页类 传入总记录数和每页显示的记录数
+			$show       = $Page->show();// 分页显示输出
+			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+			$acts = $act_model->where("uid=$id")->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$this->assign('acts',$acts);// 赋值数据集
+			$this->assign('page',$show);// 赋值分页输出
+		}
+		else{
+			$count      = $act_model->where("uid=$id")->count();// 查询满足要求的总记录数
+			$Page       = new Page($count,15);// 实例化分页类 传入总记录数和每页显示的记录数
+			$show       = $Page->show();// 分页显示输出
+			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+			$acts = $act_model->where("uid=$id")->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$this->assign('acts',$acts);// 赋值数据集
+			$this->assign('page',$show);// 赋值分页输出
 		}
 
 
