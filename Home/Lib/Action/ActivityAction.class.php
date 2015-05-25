@@ -25,9 +25,9 @@ class ActivityAction extends Action {
 			$this->assign('pageTitle', $page_title);
 
 			//$act['state']
-			$start_time_str = $act['start_date'] . ' ' . $act['start_time'];
-			$end_time_str = $act['end_date'] . ' ' . $act['end_time'];
-			$act['state'] = act_state($start_time, $end_time);
+			//$start_time_str = $act['start_date'] . ' ' . $act['start_time'];
+			//$end_time_str = $act['end_date'] . ' ' . $act['end_time'];
+			$act['state'] = act_state($act['start_time'], $act['end_time']);
 			
 			//$act['nickname']
 			$user = $user_model->find($act['uid']);
@@ -54,8 +54,8 @@ class ActivityAction extends Action {
 				$user = $user_model->find($comment['uid']);
 				$comment['header'] = $user['header'];
 				$comment['nickname'] = $user['nickname'];
-				$comment['agree_num'] = count($com_agree_model-where("cid=$comment['id']")->select());
-				$comment['disagree_num'] = count($com_disagree_model-where("cid=$comment['id']")->select());
+				$comment['agree_num'] = count($com_agree_model-where("cid=" . $comment['id'])->select());
+				$comment['disagree_num'] = count($com_disagree_model-where("cid=" . $comment['id'])->select());
 			}
 			//$hotComments
 			$hotComments = hot_comments($comments);
@@ -82,12 +82,12 @@ class ActivityAction extends Action {
 			$this->assign('newComments', $newComments);
 
 			//$theirActs
-			$theirActs = $act_model->where("uid=$act['uid']")->order('id desc')->limit('0,5')->select();
+			$theirActs = $act_model->where("uid=" . $act['uid'])->order('id desc')->limit('0,5')->select();
 			///act数据重构
 			foreach($theirActs as &$theirAct){
-				$start_time_str = $theirAct['start_date'] . ' ' . $theirAct['start_time'];
-				$end_time_str = $theirAct['end_date'] . ' ' . $theirAct['end_time'];
-				$theirAct['state'] = act_state($start_time, $end_time);
+				//$start_time_str = $theirAct['start_date'] . ' ' . $theirAct['start_time'];
+				//$end_time_str = $theirAct['end_date'] . ' ' . $theirAct['end_time'];
+				$theirAct['state'] = act_state($theirAct['start_time'], $theirAct['end_time']);
 
 				$user = $user_model->find($theirAct['uid']);
 				$theirAct['nickname'] = $user['nickname'];

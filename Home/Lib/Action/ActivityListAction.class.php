@@ -53,27 +53,28 @@ class ActivityListAction extends Action {
 		$this->assign('newComments', $newComments);
 
 		//$act array
+		$current_time = time();
 		import('ORG.Util.Page');// 导入分页类
 		if($id){
 			$count      = $act_model->where("uid=$id")->count();// 查询满足要求的总记录数
 			$Page       = new Page($count,15);// 实例化分页类 传入总记录数和每页显示的记录数
 			$show       = $Page->show();// 分页显示输出
 			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-			$acts = $act_model->where("uid=$id")->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$acts = $act_model->where("uid=$id")->order('start_time')->limit($Page->firstRow.','.$Page->listRows)->select();
 			$this->assign('acts',$acts);// 赋值数据集
 			$this->assign('page',$show);// 赋值分页输出
 		}
 		else{
-			$count      = $act_model->where("uid=$id")->count();// 查询满足要求的总记录数
+			$count      = $act_model->where("start_time > $current_time")->count();// 查询满足要求的总记录数
 			$Page       = new Page($count,15);// 实例化分页类 传入总记录数和每页显示的记录数
 			$show       = $Page->show();// 分页显示输出
 			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-			$acts = $act_model->where("uid=$id")->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+			$acts = $act_model->where("start_time > $current_time")->order('start_time')->limit($Page->firstRow.','.$Page->listRows)->select();
 			$this->assign('acts',$acts);// 赋值数据集
 			$this->assign('page',$show);// 赋值分页输出
 		}
 
-
+		$this->display();
 	}
 
 	public function hotActs(){//热门活动列表

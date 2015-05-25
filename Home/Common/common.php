@@ -1,15 +1,15 @@
 <?php
 /*
  * return int
- * para $start_time datetime
- *		$current_time datetime
- *		$end_time datetime
+ * para $start_time timestamp
+ *		$current_time timestamp
+ *		$end_time timestamp
  *
  * 根据三个时间戳返回活动的状态
  */
-function act_state($start_time, $current_time, $end_time){
-	$start_time = strtotime($start_time_str);
-	$end_time = strtotime($end_time_str);
+function act_state($start_time, $end_time){
+	//$start_time = strtotime($start_time_str);
+	//$end_time = strtotime($end_time_str);
 	$current_time = time();
 
 	if($current_time < $start_time){
