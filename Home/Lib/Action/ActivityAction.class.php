@@ -12,7 +12,7 @@ class ActivityAction extends Action {
 		$config_model = M('config');
 		$place_model = M('place');
 		$uid = session('uid');
-		$uid = 1;
+		//$uid = 1;
 
 		//$act
 		$act = $act_model->find($id);
@@ -97,8 +97,8 @@ class ActivityAction extends Action {
 			///act数据重构
 			foreach($theirActs as &$theirAct){
 				$theirAct['state'] = act_state($theirAct['start_timestamp'], $theirAct['end_timestamp']);
-				$theirAct['start_time'] = date("Y-m-d H:i:s", $act['start_timestamp']);
-				$theirAct['end_time'] = date("Y-m-d H:i:s", $act['end_timestamp']);
+				$theirAct['start_time'] = date("Y-m-d H:i:s", $theirAct['start_timestamp']);
+				$theirAct['end_time'] = date("Y-m-d H:i:s", $theirAct['end_timestamp']);
 
 				$user = $user_model->find($theirAct['uid']);
 				$theirAct['nickname'] = $user['nickname'];

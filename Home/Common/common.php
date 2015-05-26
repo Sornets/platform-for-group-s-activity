@@ -52,7 +52,7 @@ function bubbleSort($arrays, $item /*,$n*/){
 			}
 		}
 	}
-	if($n){
+	if($n && $n > $cnt){
 		$result = array();
 		for($i = 0; $i < $n; $i++){
 			$result[$i] = $arrays[$i];
