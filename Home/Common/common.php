@@ -31,3 +31,34 @@ function act_state($start_time, $end_time){
 function hot_comments($comments){
 	return array();
 }
+
+/*
+ * return array
+ * para $arrays array
+ *
+ * 将$arrays中的数组根据数组的$item元素进行排序，如果有$n，则结果数组长度为$n的值
+ */
+function bubbleSort($arrays, $item /*,$n*/){
+	$paras = func_num_args();
+	$n = $paras[2];
+
+	$cnt=count($arrays);
+	for($i = 0; $i < $cnt - 1; $i++){//循环比较
+		for($j = $i + 1; $j < $cnt; $j++){
+			if($arrays[ $j ][$item] > $arrays[ $i ][$item]){//执行交换
+				$temp = $arrays[ $i ];
+				$arrays[ $i ] = $arrays[ $j ];
+				$arrays[ $j ] = $temp;
+			}
+		}
+	}
+	if($n){
+		$result = array();
+		for($i = 0; $i < $n; $i++){
+			$result[$i] = $arrays[$i];
+		}
+		return $result;
+	}
+
+	return $arrays;
+}

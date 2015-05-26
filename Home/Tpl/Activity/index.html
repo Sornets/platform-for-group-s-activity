@@ -22,7 +22,7 @@
 					<span class="am-badge am-badge-warning">{$act.money}</span>
 				</if>
 			</p>
-			<p class="am-margin-vertical-xs am-text-sm">发起：<a href="index.php?m=Group&a=index&id={$act.id}">{$act.nickname}</a></p>
+			<p class="am-margin-vertical-xs am-text-sm">发起：<a href="index.php?m=Group&a=Index&id={$act.id}">{$act.nickname}</a></p>
 			<p class="am-margin-vertical-xs am-text-sm am-inline"><a class="am-badge am-badge-secondary">{$act.agree_num}人感兴趣</a> <a class="am-badge am-badge-secondary">{$act.join_num}人准备参加</a> <a class="am-badge am-badge-secondary" href="#commentList">{$act.comment_num}条评论</a></p>
 			<div data-am-widget="navbar" class="am-inline am-fr" id="">
 				<li data-am-navbar-share class="app-list-none am-inline">
@@ -33,7 +33,7 @@
 				</li>
 			</div>
 			<p class="am-margin-vertical-xs am-text-sm">
-				<if condition = "$haveJoined eq 1"><!--why?!-->
+				<if condition = "$haveJoined eq 0"><!--why?!-->
 					<a href = "javascript:void(0)" class="am-badge app-badge-pink am-round am-text-default">我要参加</a>
 				<else />
 					<a href = "javascript:void(0)" class="am-badge app-badge-default am-round am-text-default">已经参加</a>
@@ -63,7 +63,7 @@
 			<foreach name="hotComments" item="hotComment">
 				<article class="am-comment"><!--a comment start-->
 					<a href="#link-to-user-home">
-						<img src="/images/userHeaders/{$hotComment.header}" alt="{$hotComment.nickname}" class="am-comment-avatar" width="48" height="48"/>
+						<img src="__ROOT__/images/userHeaders/{$hotComment.header}" alt="{$hotComment.nickname}" class="am-comment-avatar" width="48" height="48"/>
 					</a>
 
 					<div class="am-comment-main">
@@ -99,7 +99,7 @@
 			<foreach name="newComments" item="newComment">
 				<article class="am-comment"><!--a comment start-->
 					<a href="#link-to-user-home">
-						<img src="/images/userHeaders/{$newComment.header}" alt="{$newComment.nickname}" class="am-comment-avatar" width="48" height="48"/>
+						<img src="__ROOT__/images/userHeaders/{$newComment.header}" alt="{$newComment.nickname}" class="am-comment-avatar" width="48" height="48"/>
 					</a>
 
 					<div class="am-comment-main">
@@ -147,7 +147,7 @@
 			<foreach name="theirActs" item="act">
 				<div class=""><!--a gourp history active-->
 					<img class="am-fl am-margin-right app-image-xs" src="__ROOT__/images/actHeaders/{$act.image}" >
-					<a href="index.php?m=Activity&a=index&id={$act.id}"><p class="am-text-truncate am-text-sm am-margin-vertical-xs">
+					<a href="index.php?m=Activity&a=Index&id={$act.id}"><p class="am-text-truncate am-text-sm am-margin-vertical-xs">
 					<if condition = "$act.state eq 0">
 						<span class="am-badge am-badge-success am-text-xs">即将到来</span>
 					<elseif condition = "$act.state eq 1"/>
@@ -166,7 +166,7 @@
 						</if>
 					</p>
 					<p class="am-margin-vertical-xs am-text-xs">
-						<a class="am-badge am-badge-secondary">{$act.comment_num}人评论</a>
+						<a href="index.php?m=Activity&a=Index&id={$act.id}#commentList" class="am-badge am-badge-secondary">{$act.comment_num}人评论</a>
 					</p>
 				</div><!--a gourp history active-->
 				<br />

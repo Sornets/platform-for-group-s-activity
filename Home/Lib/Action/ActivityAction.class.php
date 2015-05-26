@@ -59,16 +59,17 @@ class ActivityAction extends Action {
 			else{
 				$haveJoined = 0;
 			}
+			$this->assign('haveJoined', $haveJoined);
 			//重构评论数据结构 rebuild comments struct
 			foreach($comments as &$comment){
 				$user = $user_model->find($comment['uid']);
 				$comment['header'] = $user['header'];
 				$comment['nickname'] = $user['nickname'];
-				$comment['agree_num'] = count($com_agree_model-where("cid=" . $comment['id'])->select());
-				$comment['disagree_num'] = count($com_disagree_model-where("cid=" . $comment['id'])->select());
+				$comment['agree_num'] = count($com_agree_model->where("cid=" . $comment['id'])->select());
+				$comment['disagree_num'] = count($com_disagree_model->where("cid=" . $comment['id'])->select());
 			}
 			//$hotComments
-			$hotComments = hot_comments($comments);
+			$hotComments = bubbleSort($comments, 'agree_num', 5);
 			
 			$this->assign('hotComments', $hotComments);
 
@@ -113,7 +114,6 @@ class ActivityAction extends Action {
 			//计算太复杂，需要用ajax做
 
 
-			print_r($act);
 			$this->display();
 		}
 		else{
