@@ -6,7 +6,7 @@ class ActivityAction extends Action {
 		$com_model = M('comment');
 		$com_agree_model = M('comment_agree');
 		$com_disagree_model = M('comment_disagree');
-		$act_model = M('acticity');
+		$act_model = M('activity');
 		$act_agree_model = M('agree');
 		$act_join_model = M('join');
 		$config_model = M('config');
@@ -25,9 +25,9 @@ class ActivityAction extends Action {
 			$this->assign('pageTitle', $page_title);
 
 			//$act['state']
-			//$start_time_str = $act['start_date'] . ' ' . $act['start_time'];
-			//$end_time_str = $act['end_date'] . ' ' . $act['end_time'];
-			$act['state'] = act_state($act['start_time'], $act['end_time']);
+			$act['state'] = act_state($act['start_timestamp'], $act['end_timestamp']);
+			$act['start_time'] = date("Y-m-d H:i:s", $act['start_timestamp']);
+			$act['end_time'] = date("Y-m-d H:i:s", $act['end_timestamp']);
 			
 			//$act['nickname']
 			$user = $user_model->find($act['uid']);
@@ -85,9 +85,9 @@ class ActivityAction extends Action {
 			$theirActs = $act_model->where("uid=" . $act['uid'])->order('id desc')->limit('0,5')->select();
 			///act数据重构
 			foreach($theirActs as &$theirAct){
-				//$start_time_str = $theirAct['start_date'] . ' ' . $theirAct['start_time'];
-				//$end_time_str = $theirAct['end_date'] . ' ' . $theirAct['end_time'];
-				$theirAct['state'] = act_state($theirAct['start_time'], $theirAct['end_time']);
+				$theirAct['state'] = act_state($theirAct['start_timestamp'], $theirAct['end_timestamp']);
+				$act['start_time'] = date("Y-m-d H:i:s", $act['start_timestamp']);
+				$act['end_time'] = date("Y-m-d H:i:s", $act['end_timestamp']);
 
 				$user = $user_model->find($theirAct['uid']);
 				$theirAct['nickname'] = $user['nickname'];
