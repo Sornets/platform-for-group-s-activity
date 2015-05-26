@@ -11,6 +11,8 @@ class ActivityAction extends Action {
 		$act_join_model = M('join');
 		$config_model = M('config');
 		$place_model = M('place');
+		$uid = session('uid');
+		$uid = 1;
 
 		//$act
 		$act = $act_model->find($id);
@@ -35,6 +37,7 @@ class ActivityAction extends Action {
 
 			//$act['pname]
 			$place = $place_model->where("code='" . $act['place_code'] . "'")->find();
+			//$place = $place_model->where("code='" . $act['place_code'] . "'")->find();
 			$act['pname'] = $place['name'];
 
 			//$act['agree_num']
@@ -49,6 +52,13 @@ class ActivityAction extends Action {
 			
 			$this->assign('act', $act);
 
+			//$haveJoined
+			if($act_join_model->where("uid=$uid AND aid=$id")->find()){
+				$haveJoined = 1;
+			}
+			else{
+				$haveJoined = 0;
+			}
 			//重构评论数据结构 rebuild comments struct
 			foreach($comments as &$comment){
 				$user = $user_model->find($comment['uid']);
@@ -86,8 +96,8 @@ class ActivityAction extends Action {
 			///act数据重构
 			foreach($theirActs as &$theirAct){
 				$theirAct['state'] = act_state($theirAct['start_timestamp'], $theirAct['end_timestamp']);
-				$act['start_time'] = date("Y-m-d H:i:s", $act['start_timestamp']);
-				$act['end_time'] = date("Y-m-d H:i:s", $act['end_timestamp']);
+				$theirAct['start_time'] = date("Y-m-d H:i:s", $act['start_timestamp']);
+				$theirAct['end_time'] = date("Y-m-d H:i:s", $act['end_timestamp']);
 
 				$user = $user_model->find($theirAct['uid']);
 				$theirAct['nickname'] = $user['nickname'];
@@ -102,6 +112,8 @@ class ActivityAction extends Action {
 			//$best
 			//计算太复杂，需要用ajax做
 
+
+			print_r($act);
 			$this->display();
 		}
 		else{
